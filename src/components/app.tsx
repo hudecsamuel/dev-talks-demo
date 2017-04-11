@@ -1,6 +1,6 @@
 import * as React from "react"
 import {connect} from "react-redux"
-import {Link} from "react-router"
+import Nav from "components/nav"
 
 export interface Props { 
     children?: any
@@ -15,23 +15,7 @@ class App extends React.Component<Props, State> {
         const {children} = this.props
         return (
             <div>
-                <ul className="nav nav-pills">
-                    <li role="presentation" className="active">
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li role="presentation">
-                        <Link to="/foo">Foo</Link>
-                    </li>
-                    <li role="presentation">
-                        <Link to="/bar">Bar</Link>
-                    </li>
-                    <li role="presentation">
-                        <Link to="/eshop/1">Eshop</Link>
-                    </li>
-                    <li role="presentation">
-                        <Link to="/counters">Counters</Link>
-                    </li>
-                </ul>
+                <Nav />
                 {children}
             </div>
         )

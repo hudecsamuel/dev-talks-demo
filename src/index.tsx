@@ -5,7 +5,6 @@ import { createStore, applyMiddleware } from 'redux'
 import {createHistory} from 'history'
 import { Router, Route } from "react-router"
 import reducers from './reducers'
-// import routes from "./routes"
 import {History} from "history"
 import routes from "routes"
 import loggingMiddleware from "middleware/log"
@@ -21,6 +20,6 @@ const store = createStoreWithMiddleware(reducers, window["devToolsExtension"] &&
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={browserHistory} routes={routes}/>
+        <Router history={browserHistory} routes={routes(store)}/>
     </Provider>
     , document.querySelector('#container'));

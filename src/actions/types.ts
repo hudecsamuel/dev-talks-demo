@@ -31,5 +31,6 @@ export const GET_ENTRIES: ApiRequest = {
 }
 
 export const SET_ROUTE = "SET_ROUTE"
+
 export const INCREMENT = "INCREMENT"
 export const DECREMENT = "DECREMENT"
