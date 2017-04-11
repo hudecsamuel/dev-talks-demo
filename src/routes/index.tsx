@@ -1,6 +1,7 @@
 import React from "react"
 import {Route, IndexRoute} from "react-router"
 
+import Home from "components/home"
 import App from "components/app"
 import Foo from "components/foo"
 import Bar from "state_components/bar"
@@ -27,7 +28,8 @@ function setCurrentRoute(store, route: string = ROUTES.HOME) {
 }
 
 export default (store) => (
-    <Route path="/" component={App} onEnter={setCurrentRoute(store)} >
+    <Route path="/" component={App} >
+        <IndexRoute component={Home} onEnter={setCurrentRoute(store)} />
         <Route path="/foo" component={Foo} onEnter={setCurrentRoute(store, ROUTES.FOO)} />
         <Route path="/bar" component={Bar} onEnter={setCurrentRoute(store, ROUTES.BAR)} />
         <Route path="/eshop/:eshop_id" component={Eshop} onEnter={setCurrentRoute(store, ROUTES.ESHOP)} />
