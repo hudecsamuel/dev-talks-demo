@@ -22,7 +22,7 @@ class Foo extends React.Component<Props, State> {
     componentWillMount() {
         const { dispatch } = this.props
         dispatch({
-            type: GET_ENTRIES.STARTED,
+            type: GET_ENTRIES.CREATE,
         })
     }
 
