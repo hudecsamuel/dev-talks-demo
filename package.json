@@ -17,12 +17,8 @@
     "start": "NODE_ENV='local' webpack-dev-server",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch",
-    "build-local": "NODE_ENV='local' webpack -p --progress",
-    "build-local:watch": "NODE_ENV='local' webpack -p --progress --watch",
-    "build-dev": "NODE_ENV='dev' webpack --progress",
-    "build-dev:watch": "NODE_ENV='dev' webpack --progress --watch",
-    "build-prod": "NODE_ENV='production' webpack --progress",
-    "build-prod:watch": "NODE_ENV='production' webpack --progress --watch"
+    "build": "NODE_ENV='local' webpack -p --progress",
+    "build:watch": "NODE_ENV='local' webpack -p --progress --watch"
   },
   "devDependencies": {
     "@types/history": "*",
