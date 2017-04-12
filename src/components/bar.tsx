@@ -2,9 +2,9 @@ import * as React from "react"
 import Faz from "components/faz"
 import Counter from "components/counter"
 
-export interface Props {}
+export interface Props { }
 
-export interface State {}
+export interface State { }
 
 class Bar extends React.Component<Props, State> {
     public static defaultProps: Props = {}
@@ -14,7 +14,7 @@ class Bar extends React.Component<Props, State> {
             <div>
                 <p>Direct child</p>
                 <Counter />
-                <hr  />
+                <hr />
                 <p>Faz -> Mer -> 2x Counter</p>
                 <Faz />
             </div>

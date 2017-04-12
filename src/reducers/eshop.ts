@@ -14,6 +14,7 @@ const defaultState: ReduxEntity<Eshop> = {
 export default (state: ReduxEntity<Eshop> = defaultState, action): ReduxEntity<Eshop> => {
     switch (action.type) {
         case GET_ESHOP.STARTED:
+            // return Object.assign({}, state, { isLoading: true })
             return { ...state, ...{ isLoading: true } }
         case GET_ESHOP.SUCCESS:
             return {
@@ -21,7 +22,7 @@ export default (state: ReduxEntity<Eshop> = defaultState, action): ReduxEntity<E
                     data: action.payload,
                     isLoaded: true,
                     isLoading: false,
-                    updated: new Date()
+                    updated: new Date(),
                 }
             }
         case GET_ESHOP.ERROR:
@@ -29,7 +30,7 @@ export default (state: ReduxEntity<Eshop> = defaultState, action): ReduxEntity<E
                 ...state, ...{
                     isLoaded: false,
                     isLoading: false,
-                    error: action.payload
+                    error: action.payload,
                 }
             }
         default:

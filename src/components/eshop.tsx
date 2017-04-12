@@ -1,7 +1,7 @@
 import * as React from "react"
-import EshopApi, {Eshop} from "api/models/eshop"
-import {GET_ESHOP} from "actions/types"
-import { connect} from "react-redux"
+import EshopApi, { Eshop } from "api/models/eshop"
+import { GET_ESHOP } from "actions/types"
+import { connect } from "react-redux"
 
 export interface Props {
     eshop?: Eshop
@@ -12,13 +12,13 @@ export interface Props {
     dispatch?: any
 }
 
-export interface State {}
+export interface State { }
 
 class EshopComponent extends React.Component<Props, State> {
     public static defaultProps: Props = {}
 
     componentWillMount() {
-        const {dispatch} = this.props
+        const { dispatch } = this.props
         dispatch({
             type: GET_ESHOP.STARTED,
         })
@@ -28,18 +28,18 @@ class EshopComponent extends React.Component<Props, State> {
                 payload: resp.data
             })
         })
-        .catch((err) => {
-            dispatch({
-                type: GET_ESHOP.ERROR,
-                payload: err
+            .catch((err) => {
+                dispatch({
+                    type: GET_ESHOP.ERROR,
+                    payload: err
+                })
             })
-        })
     }
 
     render() {
-        const {eshop, isLoaded, isLoading, error, updated} = this.props
+        const { eshop, isLoaded, isLoading, error, updated } = this.props
 
-        if(!isLoaded && isLoading) {
+        if (!isLoaded && isLoading) {
             return (
                 <div>
                     Loading...
